@@ -12,7 +12,8 @@ import FunctionalTest3 from './components/FunctionalTest3.vue';
 <template>
   <!-- Normal stateful vue component - type checking is working, but checking required props is not :( -->
   <RegularComponent prop1="asdf" number-prop="3">hello!</RegularComponent>
-  <RegularComponent prop-1="foo" :number-prop="3">hello!</RegularComponent>
+  <RegularComponent prop-1="foo" :number-prop="3">hello!</RegularComponent> <!-- should complain once other prop checks are OK -->
+  <RegularComponent prop-1="foo" :number-prop="3" required-prop="ok">hello!</RegularComponent>
 
 
   <!-- Test 1 - functional component, props set as FunctionalTest.props, nothing working ---------------------------------------->
